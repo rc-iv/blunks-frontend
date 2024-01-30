@@ -1,4 +1,5 @@
-import Image from "next/image";
+import React from "react";
+import { WalletConnectInfo } from "./components/web3/walletConnectionInfo";
 
 export default function Home() {
   const totalImages = 32;
@@ -6,35 +7,30 @@ export default function Home() {
   const numRows = Math.ceil(totalImages / imagesPerRow);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       <div className="w-[97%] mx-auto mt-6 border-[#404833] border-4 bg-gradient-to-b from-camo-700 from-40% via-camo-600 to-camo-500 rounded-lg">
         <div className="flex justify-between my-4">
           <h1 className="text-6xl text-blast-300 font-Geom-Graphic-Bold-Italic ml-20">
             ASTROPUNKS
           </h1>
-          <button className="bg-blast-100 text-black text-xl border-2 px-10 h-12 mt-2 m-2 cut-corners-button rounded-xl">
-            Connect Wallet
-          </button>
+          <WalletConnectInfo />
         </div>
         <div className="bg-camo-400 h-[1px] w-11/12 mx-auto my-4"></div>
         <div className="flex justify-between">
           <div className="flex flex-col items-center justify-center w-1/4">
-            <p className="text-blast-100 text-lg mx-auto text-center">0.552936</p>
+            <p className="text-blast-100 text-lg mx-auto text-center">Eth Balance: 0.552936</p>
+            <p className="text-blast-100 text-lg mx-auto text-center">AtroPunk Points: 0.552936</p>
             <button className="bg-blast-300 text-black text-xl border-2 px-10 h-12 my-2 cut-corners-button rounded-xl">
               MINT ASTROPUNK
             </button>
 
             <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
             <p className="text-blast-100 p-10">
-              AstroPunks are 10,000 uniquely generated characters. No two are
-              exactly alike, and each one can be trustlessly collected by anyone
-              interacting with the Blast Layer 2 blockchain.
+              First section
             </p>
             <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
             <p className="text-blast-100 p-10">
-              AstroPunks are 10,000 uniquely generated characters. No two are
-              exactly alike, and each one can be trustlessly collected by anyone
-              interacting with the Blast Layer 2 blockchain.
+              Second section
             </p>
             <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
           </div>
@@ -82,12 +78,7 @@ export default function Home() {
             </p>
             <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
             <p className="text-xl text-blast-100 w-1/2 mx-auto">
-              After their release on Feb 02, 2024, AstroPunks are destined to be
-              featured in numerous international publications, headline
-              prestigious international auctions at both Christie’s and
-              Sotheby’s, and even enter the permanent collections of important
-              art museums such as the ICA Miami, the Centre Pompidou, and the
-              LACMA.
+              Section 3
             </p>
             <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
           </div>

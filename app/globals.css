@@ -21,5 +21,9 @@ body {
 }
 
 .cut-corners-button {
-  clip-path: polygon(20px 0, 100% 0%, 100% 50%, 90% 100%, 0% 100%, 0 50%);
+  clip-path: polygon(10% 0, 100% 0%, 100% 50%, 90% 100%, 0% 100%, 0 60%);
+}
+
+.cut-corners-card {
+  clip-path: polygon(5% 0, 100% 0%, 100% 95%, 95% 100%, 0% 100%, 0 10%);
 }
