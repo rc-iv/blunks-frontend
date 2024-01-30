@@ -1,9 +1,11 @@
 'use client'
+import dotenv from 'dotenv';
+dotenv.config();
 
 import { createWeb3Modal, defaultConfig } from '@web3modal/ethers/react'
 
 // 1. Get projectId at https://cloud.walletconnect.com
-const projectId = '6cb3a33d52b93a22eef6d38ebc6329c4'
+const projectId = process.env.WALLET_CONNECT_PROJECT_ID!
 
 // 2. Set chains
 const mainnet = {
