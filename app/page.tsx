@@ -1,5 +1,12 @@
 import React from "react";
 import { WalletConnectInfo } from "./components/web3/walletConnectionInfo";
+import MintButton from "./components/web3/mintButton";
+import { DisplayEthBalance } from "./components/web3/displayEthBalance";
+import { DisplayNftBalance } from "./components/web3/displayNftBalance";
+import { ProgressBar } from "./components/web3/progressBar";
+import Image from "next/image";
+import { FooterLinkDisplay } from "./components/ui/footerLinkDisplay";
+import { BodyImageWithText } from "./components/ui/bodyImageWithText";
 
 export default function Home() {
   const totalImages = 32;
@@ -7,83 +14,97 @@ export default function Home() {
   const numRows = Math.ceil(totalImages / imagesPerRow);
 
   return (
-    <div className="min-h-screen ">
-      <div className="w-[97%] mx-auto mt-6 border-[#404833] border-4 bg-gradient-to-b from-camo-700 from-40% via-camo-600 to-camo-500 rounded-lg">
+    <div className="min-h-[90%]">
+      <div className="w-[98%] mx-auto mt-4 border-[#404833] border-4 bg-gradient-to-b from-camo-700 from-40% via-camo-600 to-camo-500 rounded-lg">
         <div className="flex justify-between my-4">
-          <h1 className="text-6xl text-blast-300 font-Geom-Graphic-Bold-Italic ml-20">
-            ASTROPUNKS
+          <h1 className="text-5xl text-blast-300 font-Geom-Graphic-Bold-Italic ml-20">
+            BLUNKS
           </h1>
           <WalletConnectInfo />
         </div>
         <div className="bg-camo-400 h-[1px] w-11/12 mx-auto my-4"></div>
         <div className="flex justify-between">
-          <div className="flex flex-col items-center justify-center w-1/4">
-            <p className="text-blast-100 text-lg mx-auto text-center">Eth Balance: 0.552936</p>
-            <p className="text-blast-100 text-lg mx-auto text-center">AtroPunk Points: 0.552936</p>
-            <button className="bg-blast-300 text-black text-xl border-2 px-10 h-12 my-2 cut-corners-button rounded-xl">
-              MINT ASTROPUNK
-            </button>
-
-            <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
-            <p className="text-blast-100 p-10">
-              First section
+          <div className="flex flex-col items-center justify-center w-1/4 ml-4">
+            <div className="flex">
+              <p className="text-blast-100 text-lg mx-auto text-center mr-1">
+                Eth Balance:
+              </p>
+              <DisplayEthBalance className="text-blast-100 text-lg font-bold" />
+            </div>
+            <div className="flex">
+              <p className="text-blast-100 text-lg mx-auto text-center mr-1">
+                Blunks Owned:
+              </p>
+              <DisplayNftBalance className="text-blast-100 text-lg font-bold" />
+            </div>
+            <div className="bg-camo-400 h-[1px] w-3/4 mx-auto my-4"></div>
+            <p className="text-xl text-blast-100 w-1/2 mx-auto">
+              SUPPLY : 4444
             </p>
-            <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
-            <p className="text-blast-100 p-10">
-              Second section
+            <p className="text-xl text-blast-100 w-1/2 mx-auto">
+              PRICE : 0.005
             </p>
-            <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
+            <p className="text-xl text-blast-100 w-1/2 mx-auto">
+              VIBES: Immaculate
+            </p>
+            <p className="text-xl text-blast-100 w-1/2 mx-auto">MEMES: Spicy</p>
+            <div className="bg-camo-400 h-[1px] w-3/4 mx-auto my-4"></div>
+            <Image
+              alt="blunk"
+              src="/images/blunk 1.png"
+              width={300}
+              height={300}
+            />
           </div>
           <div className="bg-camo-400 min-h-[400px] w-[1px] my-auto mx-auto"></div>
           <div className="w-2/3 mx-10">
-            <div className="flex justify-between">
-              <h1 className="text-blast-100 text-4xl">
-                Mint Progress
-              </h1>
-              <div className="w-1/2">
-                <div className="flex justify-between">
-                  <h2 className="text-camo-300 text-xl">
-                    Mint Goal
-                  </h2>
-                  <p className="text-blast-100">
-                    2222 of 4444 AstroPunks minted
-                  </p>
-                </div>
-                <div className="w-full bg-camo-500 h-[15px] my-auto">
-                  <div className="bg-blast-300 w-[90%] h-[15px]"></div>
-                </div>
-              </div>
-            </div>
+            <ProgressBar />
             <div className="bg-camo-400 h-[1px] w-fullmx-auto my-4"></div>
             <div className="flex justify-between">
               <h2 className="text-blast-100 text-2xl my-auto">
-                Mint Your AstroPunk
+                Mint Your Blunk
               </h2>
               <div className="flex">
                 <p className="text-blast-100 text-lg my-auto"></p>
-                <button className="bg-blast-100 text-black text-xl border-2 px-10 h-12 mt-2 m-2 cut-corners-button rounded-xl">
-                  Connect Wallet
-                </button>
+                <MintButton />
               </div>
             </div>
+            {/* </div>
+          <div> */}
             <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
-            <p className="text-xl text-blast-100 w-1/2 mx-auto">
-              4,444 unique collectible characters with proof of ownership stored
-              on the Blast Layer 2 blockchain.
-            </p>
+            <BodyImageWithText
+              alt="blunk 2"
+              image="/images/blunk 2.png"
+              text="Blunks are a collection of 4444 unique NFTs on the Blast blockchain."
+            />
+            <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
+
+            <BodyImageWithText
+              alt="blunk 3"
+              image="/images/blunk 3.png"
+              text="Blunks aim to be the most vibrant and active community in the Blast ecosystem."
+            />
+
             <div className="bg-camo-400 h-[1px] w-fullmx-auto my-4"></div>
-            <p className="text-xl text-blast-100 w-1/2 mx-auto">
-              AstroPunks are one of the earliest and most iconic examples of
-              "Non-Fungible Tokens” minted on Blast.{" "}
-            </p>
+            <BodyImageWithText
+              alt="blunk 4"
+              image="/images/blunk 4.png"
+              text="100% token gated discord where fellow degens, builders, and artists can connect and collaborate."
+            /> 
             <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
-            <p className="text-xl text-blast-100 w-1/2 mx-auto">
-              Section 3
-            </p>
+            <BodyImageWithText
+              alt="blunk 5"
+              image="/images/blunk 5.png"
+              text="Blast off and mint your Blunk today!"
+            />
             <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
+            <FooterLinkDisplay />
+            
           </div>
         </div>
+        <div className="bg-camo-400 h-[3px] w-full mx-auto mt-4"></div>
       </div>
+      
     </div>
   );
 }

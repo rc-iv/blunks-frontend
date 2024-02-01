@@ -4,7 +4,7 @@ import "./globals.css";
 import { Web3ModalProvider } from "../context/Web3Modal";
 
 export const metadata: Metadata = {
-  title: "BlastroPunks",
+  title: "Blunks",
   description: "Launching into the BLAST ecosystem",
 };
 
