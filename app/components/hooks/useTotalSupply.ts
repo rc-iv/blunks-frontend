@@ -22,6 +22,7 @@ export function useTotalSupply() {
         console.error("Error fetching total supply:", error);
         setTotalSupply(NaN);
       }
+      
     }
 
     fetchTotalSupply(); // Initial fetch

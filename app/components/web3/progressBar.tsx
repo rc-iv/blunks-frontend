@@ -17,7 +17,6 @@ export function ProgressBar() {
   }
 
   const mintProgressRounded = Math.round(mintProgress);
-  console.log(mintProgressRounded);
   return (
     <div className="flex justify-end">
       <div className="mx-10">

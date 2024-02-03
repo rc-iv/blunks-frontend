@@ -13,7 +13,7 @@ export default function Profile() {
     ? useUserNftInventory(address!, parseInt(userNftBalance))
     : [];
   const baseUri = useGetBaseUri();
-
+const addressString = address?.toString() || "";
   // remove first 7 characters from baseUri to get the CID
   const cid = baseUri?.slice(7);
 
@@ -26,13 +26,13 @@ export default function Profile() {
       <div className="bg-black w-1/2 min-h-dvh mx-auto border-camo-300 border-2 rounded-md">
         <h1 className="text-blast-100">Please connect your wallet</h1>
       </div>
-    );
+    )
   }
   return (
     <div className="bg-black w-1/2 min-h-dvh mx-auto border-camo-300 border-2 rounded-md">
-      <div className="flex flex-wrap justify-center gap-2 mt-10">
+      <div className="flex flex-wrap justify-center gap-5  mt-10">
         {userNfts.map((tokenId) => (
-          <NFTDisplay key={tokenId} cid={cid} tokenId={parseInt(tokenId)} />
+          <NFTDisplay key={tokenId} cid={cid} tokenId={parseInt(tokenId)} address={addressString} />
         ))}
       </div>
     </div>
