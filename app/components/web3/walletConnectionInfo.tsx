@@ -1,17 +1,13 @@
 "use client";
 import { useWeb3ModalAccount } from "@web3modal/ethers/react";
 import ConnectButton from "./connectButton";
-import { useEthBalance } from "../hooks/useEthBalance";
 import Image from "next/image";
 import { DisplayEthBalance } from "./displayEthBalance";
 
 export function WalletConnectInfo() {
   const { address, isConnected } = useWeb3ModalAccount();
-  const ethBalance = useEthBalance();
 
   const truncatedAddress = address?.slice(0, 6) + "..." + address?.slice(-4);
-  const truncatedEthBalance =
-    ethBalance?.slice(0, 5);
   return (
     <div className="mr-8">
       {!isConnected && <ConnectButton />} 
@@ -21,7 +17,7 @@ export function WalletConnectInfo() {
           <p className="text-blast-100 text-lg mx-auto text-center ml-1 mr-5">
             {truncatedAddress}
           </p>
-          <Image alt="eth logo" src="/images/eth_logo.svg" width={20} height={20} />
+          <Image alt="eth logo" src="/images/eth_logo.svg" width={20} height={10} />
           <DisplayEthBalance className="text-blast-100 text-lg mx-auto text-center ml-1"/>
         </div>
       )}

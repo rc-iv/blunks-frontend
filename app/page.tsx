@@ -40,6 +40,7 @@ export default function Home() {
             className="rounded-lg my-auto"
             alt="blunk"
             src="/images/blunk 1.png"
+            priority={true}
             width={250}
             height={250}
           />
