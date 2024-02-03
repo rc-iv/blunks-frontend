@@ -19,9 +19,44 @@ export default function MintButton() {
       return;
     }
 
-    if (chainId !== 168587773) {
-      alert("Please switch to the Blast Sepolia network");
-      return;
+    const targetChainId = "0xA0C71FD";
+
+    if (chainId !== parseInt(targetChainId, 16)) {
+      try {
+        await walletProvider.request({
+          method: "wallet_switchEthereumChain",
+          params: [{ chainId: targetChainId }], // Requires hexadecimal chainId
+        });
+        // Chain switched successfully, you can proceed with the transaction after this
+      } catch (switchError) {
+        // This error code indicates that the chain has not been added to MetaMask.
+        if (switchError.code === 4902) {
+          try {
+            await walletProvider.request({
+              method: "wallet_addEthereumChain",
+              params: [
+                {
+                  chainId: targetChainId,
+                  chainName: "Blast Sepolia", // Example name, replace with actual
+                  nativeCurrency: {
+                    symbol: "ETH", // Example symbol, replace with actual
+                    decimals: 18,
+                  },
+                  rpcUrls: ["https://sepolia.blast.io"],
+                  blockExplorerUrls: [
+                    "https://testnet.blastscan.io",
+                  ],
+                },
+              ],
+            });
+            // The network has been added successfully.
+          } catch (addError) {
+            console.error("Error adding new chain", addError);
+          }
+        }
+        console.error("Error switching chain", switchError);
+        return;
+      }
     }
 
     const mintPrice = ethers.parseEther("0.005");
@@ -36,7 +71,7 @@ export default function MintButton() {
         from: address,
         to: contractAddress,
         value: mintPriceHex,
-        data: data
+        data: data,
       };
 
       const txHash = await walletProvider.request({
@@ -50,8 +85,6 @@ export default function MintButton() {
         method: "eth_getTransactionReceipt",
         params: [txHash],
       });
-
-      alert(`AstroPunk Minted Successfully!`);
     } catch (error) {
       console.log(error);
       alert("Error minting token");
