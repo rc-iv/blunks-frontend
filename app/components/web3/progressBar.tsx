@@ -1,5 +1,6 @@
 "use client";
 import { useTotalSupply } from "../hooks/useTotalSupply";
+import MintButton from "./mintButton";
 
 export function ProgressBar() {
   const maxSupply = 4444;
@@ -18,8 +19,11 @@ export function ProgressBar() {
   const mintProgressRounded = Math.round(mintProgress);
   console.log(mintProgressRounded);
   return (
-    <div className="flex justify-between">
-      <h1 className="text-blast-100 text-4xl font-Geom-Graphic-Bold-Italic">MINT PROGRESS</h1>
+    <div className="flex justify-end">
+      <div className="mx-10">
+        <MintButton />
+      </div>
+
       <div className="w-1/2">
         <div className="flex justify-between">
           <h2 className="text-camo-300 text-xl">Mint Progress</h2>

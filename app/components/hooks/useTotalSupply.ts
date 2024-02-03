@@ -4,7 +4,7 @@ import { ethers } from "ethers";
 import { contractAbi } from "../web3/contractAbi";
 
 const rpcUrl = process.env.NEXT_PUBLIC_RPC_URL!;
-const provider = new ethers.JsonRpcProvider(rpcUrl)
+const provider = new ethers.JsonRpcProvider(rpcUrl);
 
 const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;
 
@@ -12,9 +12,9 @@ export function useTotalSupply() {
   const [totalSupply, setTotalSupply] = useState(0);
 
   useEffect(() => {
-    async function fetchTotalSupply() {
+    const contract = new ethers.Contract(contractAddress, contractAbi, provider);
 
-      const contract = new ethers.Contract(contractAddress, contractAbi, provider);
+    async function fetchTotalSupply() {
       try {
         const balance = await contract.totalSupply();
         setTotalSupply(balance.toString());
@@ -24,7 +24,12 @@ export function useTotalSupply() {
       }
     }
 
-    fetchTotalSupply();
+    fetchTotalSupply(); // Initial fetch
+
+    // const intervalId = setInterval(fetchTotalSupply, 60000); // Set to fetch every 60 seconds
+
+    // // Cleanup function to clear the interval when the component unmounts
+    // return () => clearInterval(intervalId);
   }, []);
 
   return totalSupply;

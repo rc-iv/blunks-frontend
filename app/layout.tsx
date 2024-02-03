@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Head from "next/head";
 import "./globals.css";
 import { Web3ModalProvider } from "../context/Web3Modal";
+import { Navbar } from "./components/ui/navbar";
 
 export const metadata: Metadata = {
   title: "Blunks",
@@ -23,7 +24,14 @@ export default function RootLayout({
       </Head>
 
       <body className="min-h-screen font-Geom-Graphic-Bold">
-        <Web3ModalProvider>{children}</Web3ModalProvider>
+        <Web3ModalProvider>
+          <div className="min-h-[90%]">
+            <div className="w-[98%] mx-auto mt-4 border-[#404833] border-4 bg-gradient-to-b from-[#11140C] from-[27.54%] to-[#252B1B] rounded-lg">
+              <Navbar />
+              {children}
+            </div>
+          </div>
+        </Web3ModalProvider>
       </body>
     </html>
   );

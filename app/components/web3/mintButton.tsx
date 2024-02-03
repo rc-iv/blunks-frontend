@@ -57,7 +57,7 @@ export default function MintButton() {
       {!isConnected && <ConnectButton />}
       {isConnected && (
         <button
-          className="bg-blast-100 text-black text-xl border-2 px-10 h-12 mt-2 m-2 cut-corners-button rounded-xl"
+          className="bg-blast-100 text-black text-xl border-2 px-16 h-12 mt-2 m-2 cut-corners-button rounded-xl"
           onClick={mintToken}
         >
           Mint Blunk

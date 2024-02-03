@@ -24,6 +24,6 @@ body {
   clip-path: polygon(10% 0, 100% 0%, 100% 50%, 90% 100%, 0% 100%, 0 60%);
 }
 
-.cut-corners-card {
+/* .cut-corners-card {
   clip-path: polygon(5% 0, 100% 0%, 100% 95%, 95% 100%, 0% 100%, 0 10%);
-}
+} */
