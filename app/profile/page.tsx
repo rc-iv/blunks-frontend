@@ -12,8 +12,8 @@ export default function Profile() {
   const userNfts = useUserNftInventory(address!, parseInt(userNftBalance));
   const baseUri = useGetBaseUri();
   const addressString = address?.toString() || "";
-  // remove first 7 characters from baseUri to get the CID
-  const cid = baseUri?.slice(7);
+  // remove first 7 characters and the last character from baseUri to get the CID
+  const cid = baseUri?.slice(7, -1);
 
   //   console.log(`Base URI is: ${baseUri!}`);
   //   console.log(`User address is: ${address!}`);
