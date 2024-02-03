@@ -76,6 +76,9 @@ export default function Home() {
           />
           <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
           <FooterLinkDisplay />
+          {process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}
+          {process.env.NEXT_PUBLIC_RPC_URL}
+          {process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID}
         </div>
       </div>
       <div className="bg-camo-400 h-[3px] w-full mx-auto mt-4"></div>
