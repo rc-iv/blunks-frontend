@@ -2,15 +2,18 @@ import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import { useTotalSupply } from "./useTotalSupply";
 import { contractAbi } from "../web3/contractAbi";
-import { parse } from "path";
 
 const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!.toLowerCase();
 
 function useUserNftInventory(address: `0x${string}`, balance: number) {
   const [userNfts, setUserNfts] = useState<string[]>([]);
-  const totalSupply = useTotalSupply(); // Assuming this hook returns the total supply correctly
+  const totalSupply = useTotalSupply();
 
   useEffect(() => {
+    if (!address || totalSupply <= 0 || balance <= 0) {
+      console.log(`address: ${address}, totalSupply: ${totalSupply}, balance: ${balance}`);
+      return;
+    }
     const provider = new ethers.JsonRpcProvider(process.env.NEXT_PUBLIC_RPC_URL);
     const contract = new ethers.Contract(contractAddress, contractAbi, provider);
 

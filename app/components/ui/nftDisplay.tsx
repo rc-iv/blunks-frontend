@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 
 interface nftData {
   name: string;
@@ -9,7 +8,8 @@ interface nftData {
 export function NFTDisplay({
   cid,
   tokenId,
-}: Readonly<{ cid: string; tokenId: number }>) {
+  address
+}: Readonly<{ cid: string; tokenId: number; address: string }>) {
   const [nftData, setNftData] = useState<nftData | null>(null);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export function NFTDisplay({
     };
 
     fetchNftData();
-  }, [cid, tokenId]);
+  }, [cid, tokenId, address]);
   if (!nftData) {
     return <div>Loading NFT data...</div>; // Render loading state or null if you prefer
   }

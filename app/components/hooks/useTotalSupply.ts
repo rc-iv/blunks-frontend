@@ -9,7 +9,7 @@ const provider = new ethers.JsonRpcProvider(rpcUrl);
 const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;
 
 export function useTotalSupply() {
-  const [totalSupply, setTotalSupply] = useState(0);
+  const [totalSupply, setTotalSupply] = useState<number>(0);
 
   useEffect(() => {
     const contract = new ethers.Contract(contractAddress, contractAbi, provider);
@@ -17,10 +17,10 @@ export function useTotalSupply() {
     async function fetchTotalSupply() {
       try {
         const balance = await contract.totalSupply();
-        setTotalSupply(balance.toString());
+        setTotalSupply(parseInt(balance.toString()));
       } catch (error) {
         console.error("Error fetching total supply:", error);
-        setTotalSupply(NaN);
+        setTotalSupply(0);
       }
       
     }
