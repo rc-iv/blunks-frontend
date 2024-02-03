@@ -28,7 +28,8 @@ export default function MintButton() {
           params: [{ chainId: targetChainId }], // Requires hexadecimal chainId
         });
         // Chain switched successfully, you can proceed with the transaction after this
-      } catch (switchError) {
+      } catch (error) {
+        const switchError = error as { code: number };
         // This error code indicates that the chain has not been added to MetaMask.
         if (switchError.code === 4902) {
           try {
