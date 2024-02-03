@@ -10,12 +10,17 @@ import ConnectButton from "./connectButton";
 const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;
 
 export default function MintButton() {
-  const { address, isConnected } = useWeb3ModalAccount();
+  const { address, isConnected, chainId } = useWeb3ModalAccount();
   const { walletProvider } = useWeb3ModalProvider();
 
   const mintToken = async () => {
     if (!isConnected || !walletProvider) {
       alert("Please connect your wallet first");
+      return;
+    }
+
+    if (chainId !== 168587773) {
+      alert("Please switch to the Blast Sepolia network");
       return;
     }
 
