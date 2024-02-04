@@ -31,10 +31,7 @@ export default function Home() {
           <div className="bg-camo-400 h-[1px] w-3/4 mx-auto my-4"></div>
           <p className="text-xl text-blast-100 w-1/2 mx-auto">SUPPLY : 4444</p>
           <p className="text-xl text-blast-100 w-1/2 mx-auto">PRICE : 0.005</p>
-          <p className="text-xl text-blast-100 w-1/2 mx-auto">
-            VIBES: Immaculate
-          </p>
-          <p className="text-xl text-blast-100 w-1/2 mx-auto">MEMES: Spicy</p>
+          <p className="text-xl text-blast-100 w-1/2 mx-auto">Max/Wallet: 10</p>
           <div className="bg-camo-400 h-[1px] w-3/4 mx-auto my-4"></div>
           <Image
             className="rounded-lg my-auto"
