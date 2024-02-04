@@ -14,8 +14,8 @@ export default function Home() {
 
   return (
     <div>
-      <div className="flex justify-between">
-        <div className="flex flex-col items-center justify-center w-1/4 ml-4">
+      <div className="md:flex md:justify-between">
+        <div className="flex flex-col items-center justify-center md:w-1/4 ml-4">
           <div className="flex">
             <p className="text-blast-100 text-lg mx-auto text-center mr-1">
               Eth Balance:
@@ -45,8 +45,8 @@ export default function Home() {
             height={250}
           />
         </div>
-        <div className="bg-camo-400 min-h-[400px] w-[1px] my-auto mx-auto"></div>
-        <div className="w-2/3 mx-10">
+        <div className="bg-camo-400 mx-auto w-2/3 h-[2px] my-4 md:min-h-[400px] md:w-[1px] md:my-auto "></div>
+        <div className="w-full md:w-2/3 md:mx-10">
           <ProgressBar />
           <div className="bg-camo-400 h-[2px] w-full mx-auto my-4"></div>
           <BodyImageWithText
@@ -75,6 +75,10 @@ export default function Home() {
             text="Blast off and mint your Blunk today!"
           />
           <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
+          <div className="md:hidden">
+            <ProgressBar />
+            <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
+          </div>
           <FooterLinkDisplay />
         </div>
       </div>

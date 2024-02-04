@@ -12,7 +12,7 @@ export function NavBarTabs() {
 
   if (pathname === "/") {
     return (
-      <div className="flex gap-x-10">
+      <div className="flex justify-center md:justify-normal gap-x-10">
         <h2 className={selectedStyle}>Home</h2>
         <Link href="/profile">
           <h2 className={unselectedStyle}>My Blunks</h2>

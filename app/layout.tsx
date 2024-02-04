@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className="min-h-screen font-Geom-Graphic-Bold">
         <Web3ModalProvider>
           <div className="min-h-[90%]">
-            <div className="w-[98%] mx-auto mt-10 border-[#404833] border-4 bg-gradient-to-b from-[#11140C] from-[27.54%] to-[#252B1B] rounded-lg">
+            <div className="md:w-[98%] mx-auto md:mt-10 border-[#404833] border-4 bg-gradient-to-b from-[#11140C] from-[27.54%] to-[#252B1B] rounded-lg">
               <Navbar />
               {children}
             </div>

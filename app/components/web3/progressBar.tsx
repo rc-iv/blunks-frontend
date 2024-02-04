@@ -18,17 +18,19 @@ export function ProgressBar() {
 
   const mintProgressRounded = Math.round(mintProgress);
   return (
-    <div className="flex justify-end">
-      <div className="mx-10">
+    <div className="md:flex md:justify-end">
+      <div className="ml-16 mx-auto md:mx-10">
         <MintButton />
       </div>
 
-      <div className="w-1/2">
+      <div className="md:w-1/2 text">
         <div className="flex justify-between">
-          <h2 className="text-camo-300 text-xl">Mint Progress</h2>
-          <p className="text-blast-100">
-            {mintedSupply} of {maxSupply} {displayText}
-          </p>
+          <div className="mx-auto md:flex md:gap-x-28">
+            <h2 className="text-camo-300 text-center text-xl">Mint Progress</h2>
+            <p className="text-blast-100">
+              {mintedSupply} of {maxSupply} {displayText}
+            </p>
+          </div>
         </div>
         <div className="w-full bg-camo-500 h-[15px] my-auto">
           <div
