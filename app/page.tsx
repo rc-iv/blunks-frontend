@@ -36,7 +36,7 @@ export default function Home() {
           <Image
             className="rounded-lg my-auto"
             alt="blunk"
-            src="/images/blunk 1.png"
+            src="/images/Blunks.gif"
             priority={true}
             width={250}
             height={250}
@@ -44,32 +44,28 @@ export default function Home() {
         </div>
         <div className="bg-camo-400 mx-auto w-2/3 h-[2px] my-4 md:min-h-[400px] md:w-[1px] md:my-auto "></div>
         <div className="w-full md:w-2/3 md:mx-10">
-          <ProgressBar />
+          <div className="my-6">
+            <ProgressBar />
+          </div>
           <div className="bg-camo-400 h-[2px] w-full mx-auto my-4"></div>
           <BodyImageWithText
-            alt="blunk 2"
-            image="/images/blunk 2.png"
+            alt="Blunk1"
+            image="/images/Blunk1.png"
             text="Blunks are a collection of 4444 unique NFTs on the Blast blockchain."
           />
           <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
 
           <BodyImageWithText
-            alt="blunk 3"
-            image="/images/blunk 3.png"
+            alt="Blunk2"
+            image="/images/Blunk2.png"
             text="We aim to be one of the OG communities in the Blast ecosystem."
           />
 
           <div className="bg-camo-400 h-[1px] w-fullmx-auto my-4"></div>
           <BodyImageWithText
-            alt="blunk 4"
-            image="/images/blunk 4.png"
-            text="100% token gated discord where fellow degens, builders, and artists can connect and collaborate."
-          />
-          <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
-          <BodyImageWithText
-            alt="blunk 5"
-            image="/images/blunk 5.png"
-            text="Blast off and mint your Blunk today!"
+            alt="Blunk3"
+            image="/images/Blunk3.png"
+            text="Token gated discord where fellow degens, builders, and artists can connect and collaborate."
           />
           <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
           <div className="md:hidden">
