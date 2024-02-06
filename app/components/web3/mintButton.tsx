@@ -6,13 +6,16 @@ import {
 import { ethers } from "ethers";
 import { contractAbi } from "./contractAbi";
 import ConnectButton from "./connectButton";
+import { useState } from "react";
 
 const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;
 
 export default function MintButton() {
   const { address, isConnected, chainId } = useWeb3ModalAccount();
   const { walletProvider } = useWeb3ModalProvider();
-
+  const [quantity, setQuantity] = useState(1);
+  const mintPrice = 0.005;
+  
   const mintToken = async () => {
     if (!isConnected || !walletProvider) {
       alert("Please connect your wallet first");
@@ -44,9 +47,7 @@ export default function MintButton() {
                     decimals: 18,
                   },
                   rpcUrls: ["https://sepolia.blast.io"],
-                  blockExplorerUrls: [
-                    "https://testnet.blastscan.io",
-                  ],
+                  blockExplorerUrls: ["https://testnet.blastscan.io"],
                 },
               ],
             });
@@ -60,10 +61,9 @@ export default function MintButton() {
       }
     }
 
-    const mintPrice = ethers.parseEther("0.005");
+    const mintCost = ethers.parseEther((mintPrice * quantity).toString());
     // convert to hex string
-    const mintPriceHex = ethers.toBeHex(mintPrice);
-    const quantity = 1;
+    const mintCostHex = ethers.toBeHex(mintCost);
 
     try {
       const contractInterface = new ethers.Interface(contractAbi);
@@ -71,7 +71,7 @@ export default function MintButton() {
       const tx = {
         from: address,
         to: contractAddress,
-        value: mintPriceHex,
+        value: mintCostHex,
         data: data,
       };
 
@@ -95,12 +95,22 @@ export default function MintButton() {
     <div>
       {!isConnected && <ConnectButton />}
       {isConnected && (
-        <button
-          className="bg-blast-100 text-black text-xl border-2 px-16 h-12 mt-2 m-2 cut-corners-button rounded-xl"
-          onClick={mintToken}
-        >
-          Mint Blunk
-        </button>
+        <div className="flex">
+          <button
+            className="bg-blast-100 text-black text-xl border-2 px-16 h-12 mt-2 m-2 cut-corners-button rounded-xl"
+            onClick={mintToken}
+          >
+            Mint Blunk
+          </button>
+          <input
+            type="number"
+            value={quantity}
+            onChange={(e) => setQuantity(parseInt(e.target.value))}
+            min={1}
+            max={10}
+            className="bg-blast-100 border-2 text-xl w-16 h-12 m-2 rounded-xl text-center"
+          />
+        </div>
       )}
     </div>
   );

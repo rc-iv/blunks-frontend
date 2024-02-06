@@ -29,9 +29,22 @@ export default function Home() {
             <DisplayNftBalance className="text-blast-100 text-lg font-bold" />
           </div>
           <div className="bg-camo-400 h-[1px] w-3/4 mx-auto my-4"></div>
-          <p className="text-xl text-blast-100 w-1/2 mx-auto">SUPPLY : 4444</p>
-          <p className="text-xl text-blast-100 w-1/2 mx-auto">PRICE : 0.005</p>
-          <p className="text-xl text-blast-100 w-1/2 mx-auto">Max/Wallet: 10</p>
+          <div className="flex gap-x-5">
+            <div>
+              <p className="text-xl text-blast-100 mx-auto">SUPPLY</p>
+              <p className="text-xl text-blast-100 mx-auto">PRICE</p>
+              <p className="text-xl text-blast-100 mx-auto">Royalty</p>
+              <p className="text-xl text-blast-100 mx-auto">Max/Wallet</p>
+            </div>
+            '
+            <div>
+              <p className="text-xl text-blast-100 mx-auto">4444</p>
+              <p className="text-xl text-blast-100 mx-auto">0.005</p>
+              <p className="text-xl text-blast-100 mx-auto">0%</p>
+              <p className="text-xl text-blast-100 mx-auto">10</p>
+            </div>
+          </div>
+
           <div className="bg-camo-400 h-[1px] w-3/4 mx-auto my-4"></div>
           <Image
             className="rounded-lg my-auto"

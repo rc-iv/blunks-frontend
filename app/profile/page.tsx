@@ -5,6 +5,7 @@ import { useWeb3ModalAccount } from "@web3modal/ethers/react";
 import { useNftBalance } from "../components/hooks/useNftBalance";
 import useGetBaseUri from "../components/hooks/useGetBaseUri";
 import { NFTDisplay } from "../components/ui/nftDisplay";
+import ConnectButton from "../components/web3/connectButton";
 
 export default function Profile() {
   const { address, isConnected } = useWeb3ModalAccount();
@@ -23,11 +24,12 @@ export default function Profile() {
     return (
       <div className="bg-black w-1/2 min-h-dvh mx-auto border-camo-300 border-2 rounded-md">
         <h1 className="text-blast-100">Please connect your wallet</h1>
+        <ConnectButton />
       </div>
     );
   }
   return (
-    <div className="bg-black w-1/2 min-h-dvh mx-auto border-camo-300 border-2 rounded-md">
+    <div className="bg-black w-1/2 h-[500px] mx-auto border-camo-300 border-2 rounded-md my-12 overflow-auto">
       <div className="flex flex-wrap justify-center gap-5  mt-10">
         {userNfts.map((tokenId) => (
           <NFTDisplay
