@@ -34,14 +34,14 @@ const metadata = {
 
 createWeb3Modal({
   ethersConfig: defaultConfig({ metadata }),
-  chains: [blastTestNet, mainnet],
+  chains: [blastTestNet],
   projectId,
   enableAnalytics: true, // Optional - defaults to your Cloud configuration
   themeVariables: {
-    '--w3m-color-mix': '#FCFC03',
+    '--w3m-color-mix': '#FFFFFF',
     '--w3m-color-mix-strength': 20,
     '--w3m-font-family': 'geom-graphic',
-    '--w3m-accent': '#2A2B1F',
+    '--w3m-accent': '#FCFC03',
     "--w3m-font-size-master" : "12px",
   },
   themeMode: 'dark'
