@@ -36,7 +36,6 @@ export default function Home() {
               <p className="text-xl text-blast-100 mx-auto">Royalty</p>
               <p className="text-xl text-blast-100 mx-auto">Max/Wallet</p>
             </div>
-            '
             <div>
               <p className="text-xl text-blast-100 mx-auto">4444</p>
               <p className="text-xl text-blast-100 mx-auto">0.005</p>
