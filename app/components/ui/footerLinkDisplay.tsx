@@ -3,7 +3,7 @@ import Image from "next/image";
 export function FooterLinkDisplay() {
   return (
     <div className="flex gap-x-10 justify-center">
-      <a href="https://discord.gg/MXBjQcnS" target="_blank" rel="noreferrer">
+      <a href="#">
         <svg
           fill="#FCFC03"
           width="30px"
