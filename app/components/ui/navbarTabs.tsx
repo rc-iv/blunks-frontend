@@ -14,9 +14,10 @@ export function NavBarTabs() {
     return (
       <div className="flex justify-center md:justify-normal gap-x-10">
         <h2 className={selectedStyle}>Home</h2>
-        <Link href="/profile">
+        {/* <Link href="/profile">
           <h2 className={unselectedStyle}>My Blunks</h2>
-        </Link>
+        </Link> */}
+        <h2 className={unselectedStyle}>My Blunks</h2>
       </div>
     );
   }

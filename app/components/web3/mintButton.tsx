@@ -98,9 +98,9 @@ export default function MintButton() {
         <div className="flex">
           <button
             className="bg-blast-100 text-black text-xl border-2 px-16 h-12 mt-2 m-2 cut-corners-button rounded-xl"
-            onClick={mintToken}
+            //onClick={mintToken}
           >
-            Mint Blunk
+            COMING SOON
           </button>
           <input
             type="number"

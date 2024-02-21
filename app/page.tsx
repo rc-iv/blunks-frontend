@@ -38,9 +38,9 @@ export default function Home() {
             </div>
             <div>
               <p className="text-xl text-blast-100 mx-auto">4444</p>
-              <p className="text-xl text-blast-100 mx-auto">0.005</p>
+              <p className="text-xl text-blast-100 mx-auto">0.004</p>
               <p className="text-xl text-blast-100 mx-auto">0%</p>
-              <p className="text-xl text-blast-100 mx-auto">10</p>
+              <p className="text-xl text-blast-100 mx-auto">5</p>
             </div>
           </div>
 
@@ -70,14 +70,14 @@ export default function Home() {
           <BodyImageWithText
             alt="Blunk2"
             image="/images/Blunk2.png"
-            text="We aim to be one of the OG communities in the Blast ecosystem."
+            text="Navigating the Blast ecosystem together, from Day 1."
           />
 
           <div className="bg-camo-400 h-[1px] w-fullmx-auto my-4"></div>
           <BodyImageWithText
             alt="Blunk3"
             image="/images/Blunk3.png"
-            text="Token gated discord where fellow degens, builders, and artists can connect and collaborate."
+            text="In a token gated discord where fellow degens, collectors, and creators can connect and collaborate."
           />
           <div className="bg-camo-400 h-[1px] w-full mx-auto my-4"></div>
           <div className="md:hidden">
